@@ -1,22 +1,36 @@
-import { createStore } from 'redux';
+import {createStore} from 'redux';
 
 const INITIAL_STATE = {
   data: [
     'React Native',
-    'ReactJS',
-    'NodeJS'
-  ],
-};
-
-function courses(state = INITIAL_STATE, action) {
-  switch (action.type) {
-    case 'ADD_COURSE':
-      return { ...state, data: [...state.data, action.title] };
-    default:
-      return state;
-  }
+    'React JS'
+  ]
 }
 
-const store = createStore(courses);
+function courses(state = INITIAL_STATE, action){
+switch(action.type){
+  case 'ADD_COURSE':
+    return {...state, data: [...state.data, action.title, action.description]};
+  default:
+    return state;
+}
+}
 
-export default store;
+const store = createStore(courses)
+
+export default store
+
+
+
+//ACTION -> what you wanna do, LIKE: INCREMENT
+
+
+//REDUCER -> CHECK THE ACTION AND CHANGE THE BASED ON THE RESULT OF THE ACTION
+
+
+//STORE -> ESTADO GLOBALIZADO
+ //mostra no console da pagina
+
+//DISPATCH -> EXECUTES
+
+
