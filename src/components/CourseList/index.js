@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-function addCourseAction(title, description){
-  return ({type: 'ADD_COURSE', title, description})
+function addCourseAction(title){
+  return ({type: 'ADD_COURSE', title})
 }
 
 export default function CourseList() {
@@ -12,7 +12,7 @@ export default function CourseList() {
   const [description, setDescription] = useState('')
 
   function addCourse(){
-    dispatch(addCourseAction(title, description))
+    dispatch(addCourseAction(title))
   }
 
   return (
@@ -22,7 +22,7 @@ export default function CourseList() {
           return (
             <>
             <li key={course}>{course}</li>
-            <p>{course}</p>
+            <p>{description}</p>
             </>
           )
         }  
